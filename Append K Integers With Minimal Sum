@@ -1,0 +1,23 @@
+class Solution {
+    public long minimalKSum(int[] nums, int k) {
+        Set<Integer> set = new HashSet<>();
+        long ans = (long)k * (k+1)/2;
+        int count=0;
+        for(int i:nums){
+            if(!set.contains(i) && i>=1 && i<=k){
+                ans = ans-(long)(i);
+                count++;
+            }
+            set.add(i);
+        }
+        int i=k+1;
+        while(count>0){
+            if(!set.contains(i)){
+                ans += i;
+                count--;
+            }
+            i++;
+        }
+        return ans;
+    }
+}
