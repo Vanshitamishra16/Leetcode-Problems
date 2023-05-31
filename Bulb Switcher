@@ -1,0 +1,8 @@
+class Solution {
+    public int bulbSwitch(int n) {
+        double num = Math.sqrt(n);
+        double num1 = Math.floor(num);
+
+        return (int)(num1);
+    }
+}
